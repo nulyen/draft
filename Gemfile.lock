@@ -146,7 +146,7 @@ DEPENDENCIES
   annotate (= 2.4.0)
   coffee-rails (~> 3.1.0.rc)
   devise (= 1.4.2)
-  factory_girl_rails (= 1.0)
+  factory_girl_rails
   faker (= 0.3.1)
   jquery-rails
   rails (= 3.1.0.rc6)

@@ -1,5 +1,7 @@
 Draft::Application.routes.draw do
 
+  resources :players, :only => [:index, :show]
+  
   devise_for :users
 
   root :to => "pages#home"
