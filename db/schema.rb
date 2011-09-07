@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110904233245) do
+ActiveRecord::Schema.define(:version => 20110906180005) do
+
+  create_table "draft_selections", :force => true do |t|
+    t.integer  "year"
+    t.integer  "round"
+    t.integer  "pick"
+    t.integer  "overall_selection"
+    t.string   "nfl_team"
+    t.string   "college_team"
+    t.string   "position"
+    t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "players", :force => true do |t|
     t.string   "name"
