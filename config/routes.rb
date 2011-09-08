@@ -1,5 +1,6 @@
 Draft::Application.routes.draw do
 
+  resources :draft_selections, :only => [:new, :create]
   resources :players, :only => [:index, :show]
   
   devise_for :users
