@@ -1,0 +1,5 @@
+<p>Please enter a draft file to upload.</p>
+<%= form_tag({:action => :create}, :multipart => true) do %>
+  <%= file_field_tag 'draftfile' %>
+  <%= submit_tag("Upload") %>  
+<% end %>

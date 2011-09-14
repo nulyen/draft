@@ -1,0 +1,10 @@
+<h1>Players</h1>
+<ul class="users">
+	<%= will_paginate %>	
+	<% if @players.empty? %>
+	  <li>There are no players.</li>
+	<% else %>
+	  <%= render @players %>
+	<% end %>
+	<%= will_paginate %>	
+</ul>
