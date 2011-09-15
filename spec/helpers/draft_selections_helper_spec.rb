@@ -78,7 +78,10 @@ describe DraftSelectionHelper do
           @dummy.insert_rows @rows
         }.to change(DraftSelection, :count).by(3)
       end
+ 
     end
+
+
     
     describe "incorrect column count" do
       before(:each) do

@@ -1,5 +1,6 @@
 class DraftSelection < ActiveRecord::Base
-
+  attr_accessor
+  
   validates :year, :presence => true
   validates :round, :presence => true
   validates :pick, :presence => true

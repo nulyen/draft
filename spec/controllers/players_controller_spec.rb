@@ -107,11 +107,23 @@ describe PlayersController do
 
     
       describe "draft" do
+        it "should show 'undrafted' for non-drafted players" do
+          get :show, :id => @player
+          response.should have_selector("span", :content => "Undrafted.")
+        end
         
-        it "should show 'undrafted' for non-drafted players"
-        
-        it "should show player's draft year"
-          
+        it "should show player's draft info for a drafted player" do
+          @attr = Factory.attributes_for(:draft_selection)
+          @player.create_draft_selection!(@attr)
+          get :show, :id => @player
+          response.should have_selector("td", :content => @player.draft_selection.year.to_s)
+          response.should have_selector("td", :content => @player.draft_selection.round.to_s)
+          response.should have_selector("td", :content => @player.draft_selection.pick.to_s)
+          response.should have_selector("td", :content => @player.draft_selection.overall_selection.to_s)
+          response.should have_selector("td", :content => @player.draft_selection.nfl_team)
+          response.should have_selector("td", :content => @player.draft_selection.college_team)
+          response.should have_selector("td", :content => @player.draft_selection.position)
+        end            
       end
         
       describe "seasons" do

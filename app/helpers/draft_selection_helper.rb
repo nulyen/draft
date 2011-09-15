@@ -129,7 +129,9 @@ module DraftSelectionHelper
       begin
         error = enter_row row
       rescue => e
-        errors << e.message
+        errors << e.message << row
+        p e.message
+        p row
       end
     end
     errors

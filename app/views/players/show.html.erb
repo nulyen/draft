@@ -1,8 +1,13 @@
 <h1>
   <%= @player.name %>	
 </h1>
-<h2>Draft</h2>
+<h3>Draft</h3>
+<% if @player.draft_selection.nil? %>
+  <span>Undrafted.</span>
+  <br><BR>
+<%else%>
+  <%= render @player.draft_selection %>
+<%end%>
 
 
-
-<h2>Season Stats</h2>
+<h3>Season Stats</h3>
